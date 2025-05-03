@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+
+@layer base {
+    :root {
+      /* 🎨 Custom Colors */
+      --color-primary-bg: #B9FF66;
+      --color-secondary-bg: #191A23;
+      --color-tertiary-bg: #F3F3F3;
+  
+      /* 🔤 Font Family */
+      --font-primary: "Space Grotesk", sans-serif;
+  
+      /* 📏 Spacing */
+      --spacing-128: 32rem;
+    }
+  
+    body {
+      font-family: var(--font-primary);
+     
+    }
+  }
