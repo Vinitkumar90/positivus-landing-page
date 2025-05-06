@@ -36,11 +36,14 @@ function Navbar() {
           <div className="hidden md:flex space-x-8 items-center">
             {menuItems.map((item, index) => (
               <a
+                onClick={() => handleMenuClick(item.name)}
                 key={index}
                 href={item.href}
-                className="text-black px-2 hover:bg-[var(--color-primary-bg)]
+                className={`text-black px-2 hover:bg-[var(--color-primary-bg)]
                  rounded-sm hover:underline underline-offset-4 
-                 transition-all duration-300"
+                 transition-all duration-300 ${
+                   activeItem == item.name ? "bg-[var(--color-primary-bg)] text-black underline underline-offset-4" : ""
+                 }`}
               >
                 {item.name}
               </a>
@@ -76,9 +79,15 @@ function Navbar() {
           <div className="px-4 pt-2 pb-3 space-y-2 sm:px-3">
             {menuItems.map((item, index) => (
               <a
-                className="block text-black px-2 rounded-sm hover:underline underline-offset-4 transition-all
+                onClick={() => handleMenuClick(item.name)}
+                className={`block text-black px-2 rounded-sm hover:underline underline-offset-4 transition-all
                     duration-300 hover:bg-[var(--color-primary-bg)]
-                  "
+                    ${
+                      activeItem === item.name
+                        ? "bg-[var(--color-primary-bg)]"
+                        : ""
+                    }
+                  `}
                 key={index}
                 href={item.href}
               >
